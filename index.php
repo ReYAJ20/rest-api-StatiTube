@@ -40,3 +40,15 @@
                 </div>
             </div>
         </div>
+        <!-- Error Message -->
+        <?php if ($error): ?>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <?= $error_message_display ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
