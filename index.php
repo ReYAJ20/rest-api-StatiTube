@@ -29,7 +29,40 @@ $avg_views_formatted = "";
 $show_channel_data = false;
 $show_instructions = true;
 
-
+// Cek apakah fungsi belum dideklarasikan sebelumnya
+if (!function_exists('getChannelStats')) {
+    function getChannelStats($channelName, $apiKey) {
+        // Pertama, cari channel berdasarkan nama
+        $searchUrl = "https://www.googleapis.com/youtube/v3/search?part=id&type=channel&q=" . urlencode($channelName) . "&key=" . $apiKey;
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $searchUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $searchResponse = curl_exec($ch);
+        curl_close($ch);
+        
+        $searchData = json_decode($searchResponse, true);
+        
+        if (empty($searchData['items'])) {
+            return null;
+        }
+        
+        $channelId = $searchData['items'][0]['id']['channelId'];
+        
+        // Ambil statistik channel
+        $statsUrl = "https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet,brandingSettings&id=" . $channelId . "&key=" . $apiKey;
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $statsUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $statsResponse = curl_exec($ch);
+        curl_close($ch);
+        
+        return json_decode($statsResponse, true);
+    }
+}
 
 ?>
 
