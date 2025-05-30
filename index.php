@@ -16,6 +16,20 @@ $channel_id = "";
 $channel_country = "";
 $channel_custom_url = "";
 
+// Statistik channel
+$subscribers_formatted = "";
+$subscribers_total = "";
+$views_formatted = "";
+$views_total = "";
+$videos_formatted = "";
+$videos_total = "";
+$avg_views_formatted = "";
+
+// Status tampilan
+$show_channel_data = false;
+$show_instructions = true;
+
+
 
 ?>
 
