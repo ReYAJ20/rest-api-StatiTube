@@ -63,6 +63,61 @@ if (!function_exists('getChannelStats')) {
         return json_decode($statsResponse, true);
     }
 }
+if (!function_exists('formatNumber')) {
+    function formatNumber($number) {
+        if ($number >= 1000000000) {
+            return round($number / 1000000000, 1) . 'B';
+        } elseif ($number >= 1000000) {
+            return round($number / 1000000, 1) . 'M';
+        } elseif ($number >= 1000) {
+            return round($number / 1000, 1) . 'K';
+        }
+        return number_format($number);
+    }
+}
+// Proses form jika ada request POST
+if (isset($_POST['channel_name']) && !empty($_POST['channel_name'])) {
+    $channelName = trim($_POST['channel_name']);
+    $channel_input_value = htmlspecialchars($channelName);
+    
+    $channelData = getChannelStats($channelName, $API_KEY);
+    
+    if (!$channelData || empty($channelData['items'])) {
+        $error = "Channel tidak ditemukan. Pastikan nama channel benar.";
+        $error_message_display = $error;
+        $show_instructions = true;
+        $show_channel_data = false;
+    } else {
+        // Process channel data
+        $channel = $channelData['items'][0];
+        $stats = $channel['statistics'];
+        $snippet = $channel['snippet'];
+        
+        // Set channel info
+        $channel_title = htmlspecialchars($snippet['title']);
+        $channel_id = $channel['id'];
+        
+        // Process description
+        $description = $snippet['description'];
+        $channel_description = htmlspecialchars(strlen($description) > 150 ? substr($description, 0, 150) . '...' : $description);
+        
+        // Format join date
+        $channel_join_date = date('d F Y', strtotime($snippet['publishedAt']));
+        
+        // Set country and custom URL
+        $channel_country = isset($snippet['country']) ? $snippet['country'] : 'Tidak tersedia';
+        $channel_custom_url = isset($snippet['customUrl']) ? '@' . $snippet['customUrl'] : 'Tidak tersedia';
+        
+        // Process avatar URL with fallback
+        if (isset($snippet['thumbnails']['high']['url'])) {
+            $channel_avatar_url = $snippet['thumbnails']['high']['url'];
+        } elseif (isset($snippet['thumbnails']['medium']['url'])) {
+            $channel_avatar_url = $snippet['thumbnails']['medium']['url'];
+        } elseif (isset($snippet['thumbnails']['default']['url'])) {
+            $channel_avatar_url = $snippet['thumbnails']['default']['url'];
+        } else {
+            $channel_avatar_url = 'https://via.placeholder.com/100x100/ff6b6b/ffffff?text=' . urlencode(substr($snippet['title'], 0, 2));
+        }
 
 ?>
 
