@@ -135,9 +135,16 @@ if (isset($_POST['channel_name']) && !empty($_POST['channel_name'])) {
         $show_instructions = false;
         $error = null;
     }
+    } else {
+    // Set default values
+    $channel_input_value = isset($_POST['channel_name']) ? htmlspecialchars($_POST['channel_name']) : '';
+    $show_instructions = true;
+    $show_channel_data = false;
+}
 
+// Avatar fallback URL for onerror
+$avatar_fallback_url = 'https://via.placeholder.com/100x100/ff6b6b/ffffff?text=' . urlencode(substr($channel_title, 0, 2));
 ?>
-
 
 <!DOCTYPE html>
 <html lang="id">
