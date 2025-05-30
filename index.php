@@ -146,3 +146,24 @@
                 </div>
             </div>
         </div>
+        <?php endif; ?>
+        <!-- Instructions -->
+        <?php if ($show_instructions): ?>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="instructions-card">
+                    <h4><i class="fas fa-question-circle"></i> Cara Menggunakan</h4>
+                    <ol>
+                        <li>Masukkan nama channel YouTube yang ingin Anda lihat statistiknya</li>
+                        <li>Klik tombol pencarian untuk mengambil data</li>
+                        <li>Statistik akan ditampilkan meliputi jumlah subscriber, total views, dan jumlah video</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
