@@ -22,3 +22,21 @@
                 </div>
             </div>
         </div>
+        <!-- Search Form -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8 col-lg-6">
+                <div class="search-container">
+                    <form method="POST" class="d-flex gap-2">
+                        <input type="text" 
+                               name="channel_name" 
+                               class="form-control form-control-lg" 
+                               placeholder="Masukkan nama channel YouTube..." 
+                               value="<?= $channel_input_value ?>"
+                               required>
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
