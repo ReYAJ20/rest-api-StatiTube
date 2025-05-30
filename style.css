@@ -155,3 +155,79 @@ body {
 .stat-card.engagement::before {
     background: linear-gradient(45deg, #f093fb, #f5cff5);
 }
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.subscribers .stat-icon {
+    color: #ff6b6b;
+}
+
+.views .stat-icon {
+    color: #4ecdc4;
+}
+
+.videos .stat-icon {
+    color: #45b7d1;
+}
+
+.engagement .stat-icon {
+    color: #f093fb;
+}
+
+.stat-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.stat-content p {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stat-content small {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Info Card */
+.info-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.info-card h4 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.info-card h4 i {
+    color: #dc3545;
+    margin-right: 10px;
+}
+
+.info-card p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.info-card strong {
+    color: #333;
+}
+
+.info-card code {
+    background: #f8f9fa;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
