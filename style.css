@@ -196,7 +196,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Info Card */
+
 .info-card {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
@@ -231,7 +231,7 @@ body {
     border-radius: 5px;
     font-size: 0.9rem;
 }
-/* Instructions Card */
+
 .instructions-card {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
@@ -261,7 +261,6 @@ body {
     line-height: 1.6;
 }
 
-/* Alert Styles */
 .alert {
     border: none;
     border-radius: 15px;
@@ -279,4 +278,76 @@ body {
     background: rgba(13, 202, 240, 0.1);
     color: #055160;
     border-left: 4px solid #0dcaf0;
+}
+
+@media (max-width: 768px) {
+    .header-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header-container .lead {
+        font-size: 1rem;
+    }
+    
+    .search-container {
+        padding: 1.5rem;
+    }
+    
+    .search-container .d-flex {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    
+    .channel-header {
+        padding: 1.5rem;
+    }
+    
+    .channel-header .row {
+        text-align: center;
+    }
+    
+    .channel-avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .stat-content h3 {
+        font-size: 2rem;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px 0;
+    }
+    
+    .container-fluid {
+        padding: 0 10px;
+    }
+    
+    .header-container {
+        padding: 1rem 0;
+    }
+    
+    .header-container h1 {
+        font-size: 2rem;
+    }
+    
+    .search-container {
+        padding: 1rem;
+    }
+    
+    .stat-content h3 {
+        font-size: 1.8rem;
+    }
 }
