@@ -118,6 +118,23 @@ if (isset($_POST['channel_name']) && !empty($_POST['channel_name'])) {
         } else {
             $channel_avatar_url = 'https://via.placeholder.com/100x100/ff6b6b/ffffff?text=' . urlencode(substr($snippet['title'], 0, 2));
         }
+        // Format statistics
+        $subscribers_formatted = formatNumber($stats['subscriberCount']);
+        $subscribers_total = number_format($stats['subscriberCount']);
+        $views_formatted = formatNumber($stats['viewCount']);
+        $views_total = number_format($stats['viewCount']);
+        $videos_formatted = formatNumber($stats['videoCount']);
+        $videos_total = number_format($stats['videoCount']);
+        
+        // Calculate average views per video
+        $avg_views = $stats['videoCount'] > 0 ? $stats['viewCount'] / $stats['videoCount'] : 0;
+        $avg_views_formatted = formatNumber($avg_views);
+        
+        // Set display flags
+        $show_channel_data = true;
+        $show_instructions = false;
+        $error = null;
+    }
 
 ?>
 
