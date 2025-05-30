@@ -1,3 +1,25 @@
+<?php
+$API_KEY = 'AIzaSyDw3IkEnA4UbxN5z-BeZsJmlcMQzTnYpkc';
+
+// Variabel untuk template
+$channelData = null;
+$error = null;
+$channel_input_value = "";
+$error_message_display = "";
+
+// Data channel untuk template
+$channel_avatar_url = "";
+$channel_title = "";
+$channel_description = "";
+$channel_join_date = "";
+$channel_id = "";
+$channel_country = "";
+$channel_custom_url = "";
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
