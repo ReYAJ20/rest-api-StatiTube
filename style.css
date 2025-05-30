@@ -90,3 +90,68 @@ body {
     transform: scale(1.05);
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
+.channel-title {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.channel-description {
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.channel-date {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.channel-date i {
+    margin-right: 5px;
+    color: #dc3545;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.stat-card.subscribers::before {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+}
+
+.stat-card.views::before {
+    background: linear-gradient(45deg, #4ecdc4, #7fdbda);
+}
+
+.stat-card.videos::before {
+    background: linear-gradient(45deg, #45b7d1, #7bc8e8);
+}
+
+.stat-card.engagement::before {
+    background: linear-gradient(45deg, #f093fb, #f5cff5);
+}
