@@ -52,3 +52,40 @@
             </div>
         </div>
         <?php endif; ?>
+        <!-- Channel Statistics -->
+        <?php if ($show_channel_data): ?>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+                <!-- Channel Info -->
+                <div class="channel-header mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <img src="<?= $channel_avatar_url ?>" 
+                                 alt="Channel Avatar" 
+                                 class="channel-avatar"
+                                 onerror="this.src='<?= $avatar_fallback_url ?>'">
+                        </div>
+                        <div class="col">
+                            <h2 class="channel-title"><?= $channel_title ?></h2>
+                            <p class="channel-description"><?= $channel_description ?></p>
+                            <p class="channel-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                Bergabung: <?= $channel_join_date ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Statistics Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card subscribers">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3><?= $subscribers_formatted ?></h3>
+                                <p>Subscribers</p>
+                                <small><?= $subscribers_total ?> total</small>
+                            </div>
+                        </div>
+                    </div>
