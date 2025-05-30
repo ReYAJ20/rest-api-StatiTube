@@ -126,4 +126,23 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- Additional Info -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="info-card">
+                            <h4><i class="fas fa-info-circle"></i> Informasi Channel</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Nama Channel:</strong> <?= $channel_title ?></p>
+                                    <p><strong>Country:</strong> <?= $channel_country ?></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Channel ID:</strong> <code><?= $channel_id ?></code></p>
+                                    <p><strong>Custom URL:</strong> <?= $channel_custom_url ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
