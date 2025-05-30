@@ -113,3 +113,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card engagement">
+                            <div class="stat-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3><?= $avg_views_formatted ?></h3>
+                                <p>Avg Views/Video</p>
+                                <small>Per video</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
