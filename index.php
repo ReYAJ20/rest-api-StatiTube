@@ -89,3 +89,27 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card views">
+                            <div class="stat-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3><?= $views_formatted ?></h3>
+                                <p>Total Views</p>
+                                <small><?= $views_total ?> views</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-card videos">
+                            <div class="stat-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3><?= $videos_formatted ?></h3>
+                                <p>Total Videos</p>
+                                <small><?= $videos_total ?> videos</small>
+                            </div>
+                        </div>
+                    </div>
