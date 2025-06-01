@@ -103,7 +103,6 @@ if (isset($_POST['channel_name']) && !empty($_POST['channel_name'])) {
         
         // Format join date
         $channel_join_date = date('d F Y', strtotime($snippet['publishedAt']));
-        
         // Set country and custom URL
         $channel_country = isset($snippet['country']) ? $snippet['country'] : 'Tidak tersedia';
         $channel_custom_url = isset($snippet['customUrl']) ? '@' . $snippet['customUrl'] : 'Tidak tersedia';
@@ -219,7 +218,6 @@ $avatar_fallback_url = 'https://via.placeholder.com/100x100/ff6b6b/ffffff?text='
                             <p class="channel-date">
                                 <i class="fas fa-calendar-alt"></i>
                                 Bergabung: <?= $channel_join_date ?>
-                            </p>
                         </div>
                     </div>
                 </div>
